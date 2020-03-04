@@ -1,0 +1,4 @@
+[core]
+    remote = myremote
+['remote "myremote"']
+    url = s3://daviddvctest/dvc-mnist-v1_1_1
