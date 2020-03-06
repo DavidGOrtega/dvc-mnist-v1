@@ -1,10 +1,15 @@
 cmd: python code/eval.py
 deps:
 - path: code/eval.py
+  md5: 133ca1d9c99859076eb97b03e3d6af6c
 - path: data/mnist_test.csv
+  md5: c807df8d6d804ab2647fc15c3d40f543
 - path: models
+  md5: 421bc212daf687feadcee997a2a8509c.dir
 outs:
 - path: metrics/eval.json
   cache: false
   metric: true
   persist: false
+  md5: 39c94e3e727647c01210fa7fb6fb108d
+md5: ce4a6ef9dc3169ed25cfb33187b63d26
