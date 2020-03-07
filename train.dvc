@@ -1,7 +1,7 @@
 cmd: python code/train.py
 deps:
 - path: code/train.py
-  md5: 6bd4fd05c3d824820da589173d69692e
+  md5: af8b30b01b99a70d593689941553a3f1
 - path: data/mnist_train.csv
   md5: 5b49cf1b57fb9d6102b559d59d99df7c
 outs:
@@ -9,10 +9,10 @@ outs:
   cache: true
   metric: false
   persist: false
-  md5: 87ca1ee627348986b6706e8772f248f0.dir
+  md5: 5aa5d601cb4e302542eff9471181390d.dir
 - path: metrics/train.json
   cache: false
   metric: true
   persist: false
-  md5: 85dfb617216696edc9b409ccebb2a79f
-md5: 9716862af046960eb3316d7618bf3d5b
+  md5: d9a90b2c8dd3e67dbceb0733f564d5bf
+md5: 67a628bd2f9bf47062ac5ad1ae719f5a
