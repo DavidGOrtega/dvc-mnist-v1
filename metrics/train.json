@@ -1,1 +1,1 @@
-{"batch_size": 128, "num_steps": 1300, "learning_rate": 0.01, "took": 0.0020977838039398194}
+{"batch_size": 128, "num_steps": 1200, "learning_rate": 0.01, "took": 0.0018852224349975586}
