@@ -18,7 +18,7 @@ jobs:
         run: |
           pip install tensorflow wget
 
-      - uses: DavidGOrtega/dvc-action-docker
+      - uses: DavidGOrtega/dvc-action-docker@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           repro_targets: eval.dvc
