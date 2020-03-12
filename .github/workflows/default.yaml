@@ -29,6 +29,16 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          run: |
+            pip install tensorflow wget
+            ls
+            echo hello >> hello.txt
+            ls
+        run: |
+          pip install tensorflow wget
+          ls
+          echo hello >> hello.txt
+          ls
 
       - name: test dvcreport
         run: |
