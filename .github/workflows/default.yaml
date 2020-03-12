@@ -5,7 +5,7 @@ on: [push, pull_request]
 jobs:
   default:
     runs-on: ubuntu-latest
-    container: DavidGOrtega/dvc-action-docker@master
+    #container: DavidGOrtega/dvc-action-docker@master
 
     steps:
       - uses: actions/checkout@v2
