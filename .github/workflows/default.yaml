@@ -34,11 +34,6 @@ jobs:
             ls
             echo hello >> hello.txt
             ls
-        run: |
-          pip install tensorflow wget
-          ls
-          echo hello >> hello.txt
-          ls
 
       - name: test dvcreport
         run: |
