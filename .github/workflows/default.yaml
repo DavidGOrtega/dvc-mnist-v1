@@ -18,9 +18,6 @@ jobs:
       - name: setup requirements
         run: |
           pip install tensorflow wget
-          ls
-          echo hello >> hello.txt
-          ls
 
       - uses: DavidGOrtega/dvc-action-docker@master
         with:
