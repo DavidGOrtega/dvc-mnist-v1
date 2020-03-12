@@ -28,8 +28,3 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           run: |
             pip install tensorflow wget
-
-      - name: test dvcreport
-        run: |
-          ls
-          dvcreport
