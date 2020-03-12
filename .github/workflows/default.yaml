@@ -18,10 +18,14 @@ jobs:
         run: |
           pip install tensorflow wget
 
-      - uses: DavidGOrtega/dvc-action@v1
+      - uses: DavidGOrtega/dvc-action-docker
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           repro_targets: eval.dvc
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: test dvcreport
+        run: |
+          dvcreport
