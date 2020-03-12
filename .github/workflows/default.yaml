@@ -15,9 +15,9 @@ jobs:
       #   with:
       #     python-version: 3.6
 
-      # - name: setup requirements
-      #   run: |
-      #     pip install tensorflow wget
+      - name: setup requirements
+        run: |
+          pip install tensorflow wget
 
       - uses: DavidGOrtega/dvc-action-docker@master
         with:
