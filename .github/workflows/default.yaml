@@ -18,6 +18,7 @@ jobs:
       - name: setup requirements
         run: |
           pip install tensorflow wget
+          whoami
 
       - uses: DavidGOrtega/dvc-action-docker@master
         with:
