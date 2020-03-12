@@ -10,14 +10,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - name: setup python 
-        uses: actions/setup-python@v1
-        with:
-          python-version: 3.6
+      # - name: setup python 
+      #   uses: actions/setup-python@v1
+      #   with:
+      #     python-version: 3.6
 
-      - name: setup requirements
-        run: |
-          pip install tensorflow wget
+      # - name: setup requirements
+      #   run: |
+      #     pip install tensorflow wget
 
       - uses: DavidGOrtega/dvc-action-docker@master
         with:
