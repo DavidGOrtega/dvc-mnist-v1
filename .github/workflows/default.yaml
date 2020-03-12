@@ -5,6 +5,7 @@ on: [push, pull_request]
 jobs:
   default:
     runs-on: ubuntu-latest
+    container: DavidGOrtega/dvc-action-docker@master
 
     steps:
       - uses: actions/checkout@v2
@@ -17,6 +18,9 @@ jobs:
       - name: setup requirements
         run: |
           pip install tensorflow wget
+          ls
+          echo hello >> hello.txt
+          ls
 
       - uses: DavidGOrtega/dvc-action-docker@master
         with:
@@ -28,4 +32,5 @@ jobs:
 
       - name: test dvcreport
         run: |
+          ls
           dvcreport
