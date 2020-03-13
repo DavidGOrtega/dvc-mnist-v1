@@ -3,36 +3,39 @@ name: default
 on: [push, pull_request]
 
 jobs:
-  default:
+  dvc:
     runs-on: ubuntu-latest
-    # container: docker://davidgortega/dvc:0.1.6
-
+    container: docker://davidgortega/dvc:0.1.6
     steps:
-      - uses: actions/checkout@v2
-      
-      - name: setup python 
-        uses: actions/setup-python@v1
-        with:
-          python-version: 3.6
-
-      - uses: DavidGOrtega/dvc-action-docker@master
+      - name: run
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           repro_targets: eval.dvc
-          run: |
-            pip install tensorflow wget &&
-            github_run
-
-      # - name: run
-      #   run: |
-      #     pip install tensorflow wget
-      #     github_run
-      #   env:
-      #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #     repro_targets: eval.dvc
+        run: |
+          pip install tensorflow wget
+          dvc_action_run
 
 
+  # default:
+  #   runs-on: ubuntu-latest
+  #   # container: docker://davidgortega/dvc:0.1.6
+
+  #   steps:
+  #     - uses: actions/checkout@v2
+      
+  #     - name: setup python 
+  #       uses: actions/setup-python@v1
+  #       with:
+  #         python-version: 3.6
+
+  #     - uses: DavidGOrtega/dvc-action-docker@master
+  #       env:
+  #         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  #         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #         repro_targets: eval.dvc
+  #         run: |
+  #           pip install tensorflow wget &&
+  #           github_run
