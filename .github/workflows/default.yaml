@@ -26,7 +26,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           repro_targets: eval.dvc
           run: |
-            pip install tensorflow wget &&
             github_run
 
       # - name: run
