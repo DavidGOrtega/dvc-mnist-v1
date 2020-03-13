@@ -34,3 +34,8 @@ jobs:
         run: |
           pip install tensorflow wget
           github_run
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          ENV_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ENV_REPRO_TARGETS: eval.dvc
