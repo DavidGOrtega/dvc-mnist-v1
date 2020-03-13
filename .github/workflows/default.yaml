@@ -5,43 +5,40 @@ on: [push, pull_request]
 jobs:
   default:
     runs-on: ubuntu-latest
-    container: docker://davidgortega/dvc:0.1.6
+    # container: docker://davidgortega/dvc:0.1.6
 
     steps:
       - uses: actions/checkout@v2
       
-      # - name: setup python 
-      #   uses: actions/setup-python@v1
-      #   with:
-      #     python-version: 3.6
+      - name: setup python 
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.6
 
-      # - name: setup requirements
-      #   run: |
-      #     pip install tensorflow wget
-      #     whoami
-
-      # - uses: DavidGOrtega/dvc-action-docker@master
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     repro_targets: eval.dvc
-      #   env:
-      #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      #     run: |
-      #       pip install tensorflow wget
-
-      - name: run
+      - name: setup requirements
         run: |
           pip install tensorflow wget
-          github_run
+          whoami
+
+      - uses: DavidGOrtega/dvc-action-docker@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          repro_targets: eval.dvc
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          repro_targets: eval.dvc
           run: |
-            ls 
-            whoami
-            pip install tensorflow \
-            wget \
+            pip install tensorflow wget
+            github_run
+
+      # - name: run
+      #   run: |
+      #     pip install tensorflow wget
+      #     github_run
+      #   env:
+      #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     repro_targets: eval.dvc
+
 
