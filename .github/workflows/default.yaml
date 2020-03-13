@@ -21,9 +21,6 @@ jobs:
           whoami
 
       - uses: DavidGOrtega/dvc-action-docker@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          repro_targets: eval.dvc
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
