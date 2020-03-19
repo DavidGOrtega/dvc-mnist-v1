@@ -5,7 +5,7 @@ on: [push, pull_request]
 jobs:
   dvc:
     runs-on: ubuntu-latest
-    container: docker://davidgortega/dvc-cml:dev
+    container: docker://dvcorg/dvc-cml:latest
     steps:
       - uses: actions/checkout@v2
       
