@@ -15,6 +15,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           repro_targets: eval.dvc
+          metrics_format: '0[.][000]'
         run: |
           pip install tensorflow wget
           dvc_action_run
