@@ -16,6 +16,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           repro_targets: eval.dvc
           metrics_format: '0[.][000]'
+          baseline: 'HEAD~1'
         run: |
           pip install tensorflow wget
           dvc_action_run
