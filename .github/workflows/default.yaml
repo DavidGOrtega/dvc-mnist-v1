@@ -4,8 +4,10 @@ on: [push, pull_request]
 
 jobs:
   dvc:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux]
     container: docker://dvcorg/dvc-cml:test
+      - options: --gpus all
+
     steps:
       - uses: actions/checkout@v2
       
