@@ -22,6 +22,7 @@ jobs:
           metrics_format: '0[.][000]'
         run: |
           pip install tensorflow-gpu wget
+          nvidia-smi
           dvc_action_run
 
 
