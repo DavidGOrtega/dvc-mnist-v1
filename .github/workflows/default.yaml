@@ -6,7 +6,7 @@ jobs:
   dvc:
     runs-on: [self-hosted, linux]
     container: docker://dvcorg/dvc-cml:test
-      - options: --gpus all
+      options: --gpus all
 
     steps:
       - uses: actions/checkout@v2
