@@ -26,7 +26,7 @@ jobs:
           pip2 --version
           python --version
           nvidia-smi
-          python code/train.py
+          dvc_action_run
 
 
   # default:
