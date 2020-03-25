@@ -21,7 +21,7 @@ jobs:
           repro_targets: eval.dvc
           metrics_format: '0[.][000]'
         run: |
-          pip install tensorflow-gpu wget
+          pip install tensorflow wget
           nvidia-smi
           dvc_action_run
 
