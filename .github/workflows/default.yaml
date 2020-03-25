@@ -24,9 +24,9 @@ jobs:
           pip install tensorflow wget
           pip show tensorflow
           pip --version
-          dvc version
+          python --version
           nvidia-smi
-          dvc_action_run
+          python code/train.py
 
 
   # default:
