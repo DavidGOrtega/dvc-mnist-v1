@@ -21,9 +21,9 @@ jobs:
           repro_targets: eval.dvc
           metrics_format: '0[.][000]'
         run: |
-          pip install tensorflow wget
-          pip show tensorflow
-          pip --version
+          pip2 install tensorflow wget
+          pip2 show tensorflow
+          pip2 --version
           python --version
           nvidia-smi
           python code/train.py
