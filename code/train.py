@@ -6,6 +6,10 @@ from tensorflow.python.util import deprecation
 deprecation._PRINT_DEPRECATION_WARNINGS = False
 tf.disable_v2_behavior()
 
+print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('GPU')))
+print(tf.test.is_built_with_cuda())
+#tf.debugging.set_log_device_placement(True)
+
 import Mnist
 
 dirname = os.path.dirname(__file__)
