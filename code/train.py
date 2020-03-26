@@ -19,7 +19,7 @@ DATASET = Mnist.DataSet(train_images, train_labels)
 OUT = os.path.join(dirname, "../models/mnist")
 
 batch_size = 128
-num_steps = 3000
+num_steps = 300
 learning_rate = 0.01
 start = time.time()
 
@@ -53,6 +53,7 @@ with tf.Session() as session:
 
     # training
     for step in range(num_steps):
+        time.sleep(1)
         batch_data, batch_labels = DATASET.next_batch(batch_size)
         feed_dict = {x: batch_data, y_: batch_labels}
         
