@@ -22,7 +22,7 @@ jobs:
           metrics_format: '0[.][000]'
         run: |
           nvidia-smi
-          pip install tensorflow wget
+          pip2 install tensorflow wget
           dvc_action_run
 
 
