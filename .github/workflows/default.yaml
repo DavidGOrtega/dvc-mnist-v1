@@ -21,10 +21,6 @@ jobs:
           repro_targets: eval.dvc
           metrics_format: '0[.][000]'
         run: |
-          pip install tensorflow wget
-          pip show tensorflow
-          pip --version
-          python --version
           nvidia-smi
           dvc_action_run
 
