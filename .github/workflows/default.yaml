@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   dvc:
-    runs-on: [self-hosted, hercules]
+    runs-on: [self-hosted, linux]
     container: 
       image: docker://dvcorg/dvc-cml:gpu
       options: --gpus "device=0"
