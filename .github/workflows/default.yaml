@@ -6,8 +6,8 @@ jobs:
   dvc:
     runs-on: [self-hosted, linux]
     container: 
-      image: docker://dvcorg/dvc-cml:gpu
-      options: --gpus "device=0"
+      image: docker://dvcorg/dvc-cml:prom
+      #options: --gpus "device=0"
 
     steps:
       - uses: actions/checkout@v2
@@ -22,6 +22,7 @@ jobs:
           metrics_format: '0[.][000]'
         run: |
           nvidia-smi
+          pip2 install tensorflow wget
           dvc_action_run
 
 
