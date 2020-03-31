@@ -11,9 +11,7 @@ jobs:
     container: 
       image: docker://dvcorg/dvc-cml-gpu:gpu
       # options: --gpus all
-      options: 
-         - --runtime nvidia 
-         - -e "NVIDIA_VISIBLE_DEVICES=0"
+      options: --runtime nvidia -e "NVIDIA_VISIBLE_DEVICES=0"
     env:
       NVIDIA_VISIBLE_DEVICES: '0'
 
