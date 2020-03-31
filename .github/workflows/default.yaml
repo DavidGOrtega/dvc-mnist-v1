@@ -2,6 +2,9 @@ name: default
 
 on: [push, pull_request]
 
+env:
+  NVIDIA_VISIBLE_DEVICES: '0'
+  
 jobs:
   dvc:
     runs-on: [self-hosted, linux]
