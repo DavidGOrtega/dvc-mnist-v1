@@ -8,6 +8,7 @@ jobs:
     container: 
       image: docker://dvcorg/dvc-cml-gpu:gpu
       # options: --gpus all
+      options: --runtime nvidia
 
     steps:
       - uses: actions/checkout@v2
