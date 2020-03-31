@@ -9,6 +9,8 @@ jobs:
       image: docker://dvcorg/dvc-cml-gpu:gpu
       # options: --gpus all
       options: --runtime nvidia
+    env:
+      NVIDIA_VISIBLE_DEVICES: '0'
 
     steps:
       - uses: actions/checkout@v2
