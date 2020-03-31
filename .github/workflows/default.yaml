@@ -22,6 +22,7 @@ jobs:
           metrics_format: '0[.][000]'
           NVIDIA_VISIBLE_DEVICES: '0'
         run: |
+          nvidia-smi
           pip2 install tensorflow wget
           dvc_action_run
 
