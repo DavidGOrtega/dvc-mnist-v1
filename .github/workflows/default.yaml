@@ -8,9 +8,9 @@ env:
 jobs:
   dvc:
     runs-on: [self-hosted, linux]
-    container: 
-      image: docker://dvcorg/dvc-cml-gpu:gpu
-      options: --gpus all -v "/var/run/docker.sock":"/var/run/docker.sock"
+    #container: 
+      #image: docker://dvcorg/dvc-cml-gpu:gpu
+      #options: --gpus all -v "/var/run/docker.sock":"/var/run/docker.sock"
       #options: --runtime nvidia -e "NVIDIA_VISIBLE_DEVICES=0"
 
     steps:
