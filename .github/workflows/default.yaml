@@ -10,10 +10,8 @@ jobs:
     runs-on: [self-hosted, linux]
     container: 
       image: docker://dvcorg/dvc-cml-gpu:gpu
-      # options: --gpus all
-      options: --runtime nvidia -e "NVIDIA_VISIBLE_DEVICES=0"
-    env:
-      NVIDIA_VISIBLE_DEVICES: '0'
+      options: --gpus all
+      #options: --runtime nvidia -e "NVIDIA_VISIBLE_DEVICES=0"
 
     steps:
       - uses: actions/checkout@v2
@@ -26,7 +24,7 @@ jobs:
           baseline: 'HEAD~1'
           repro_targets: eval.dvc
           metrics_format: '0[.][000]'
-          NVIDIA_VISIBLE_DEVICES: '0'
+
         run: |
           nvidia-smi
           pip2 install tensorflow wget
