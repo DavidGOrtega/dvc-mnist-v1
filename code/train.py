@@ -53,7 +53,6 @@ with tf.Session() as session:
 
     # training
     for step in range(num_steps):
-        time.sleep(1)
         batch_data, batch_labels = DATASET.next_batch(batch_size)
         feed_dict = {x: batch_data, y_: batch_labels}
         
