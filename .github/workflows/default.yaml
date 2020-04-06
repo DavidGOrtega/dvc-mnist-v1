@@ -23,7 +23,6 @@ jobs:
           pip --version 
           python --version
           nvidia-smi
-          pip install tensorflow wget
           dvc_action_run
 
 
