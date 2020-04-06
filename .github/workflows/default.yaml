@@ -8,10 +8,6 @@ env:
 jobs:
   dvc:
     runs-on: [dvc-cml]
-    #container: 
-      #image: docker://dvcorg/dvc-cml-gpu:gpu
-      #options: --gpus all -v "/var/run/docker.sock":"/var/run/docker.sock"
-      #options: --runtime nvidia -e "NVIDIA_VISIBLE_DEVICES=0"
 
     steps:
       - uses: actions/checkout@v2
@@ -27,7 +23,7 @@ jobs:
 
         run: |
           nvidia-smi
-          pip2 install tensorflow wget
+          pip install tensorflow wget
           dvc_action_run
 
 
