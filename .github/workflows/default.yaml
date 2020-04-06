@@ -6,7 +6,7 @@ jobs:
   dvc:
     runs-on: [dvc-cml]
     container:
-      image: docker://dvcorg/dvc-cml-gpu:latest
+      image: docker://davidgortega/dvc-cml-gpu:runner2
       options: --gpus "device=0"
 
     steps:
