@@ -4,10 +4,7 @@ on: [push, pull_request]
 
 jobs:
   dvc:
-    runs-on: [self-hosted]
-    container:
-      image: docker://dvcorg/dvc-cml-gpu:latest
-      options: --gpus "device=0"
+    runs-on: [dvc-cml]
 
     steps:
       - uses: actions/checkout@v2
