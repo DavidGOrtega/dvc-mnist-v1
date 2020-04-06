@@ -7,7 +7,7 @@ jobs:
     runs-on: [dvc-cml]
     container:
       image: docker://davidgortega/dvc-cml-gpu:runner2
-      options: --gpus "device=0"
+      options: --gpus "device=0" -v "/var/run/docker.sock":"/var/run/docker.sock"
 
     steps:
       - uses: actions/checkout@v2
