@@ -2,9 +2,6 @@ name: default
 
 on: [push, pull_request]
 
-env:
-  NVIDIA_VISIBLE_DEVICES: '0'
-
 jobs:
   dvc:
     runs-on: [dvc-cml]
@@ -20,6 +17,7 @@ jobs:
           baseline: 'HEAD~1'
           repro_targets: eval.dvc
           metrics_format: '0[.][000]'
+          NVIDIA_VISIBLE_DEVICES: '0'
 
         run: |
           nvidia-smi
