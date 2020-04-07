@@ -5,15 +5,8 @@ on: [push, pull_request]
 jobs:
   dvc:
     runs-on: [dvc-cml]
-    container:
-      image: docker://davidgortega/dvc-cml-gpu:runner2
-      options: --gpus "device=0" -v "/var/run/docker.sock":"/var/run/docker.sock" -v /home:/home 
 
     steps:
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
-
       - uses: actions/checkout@v2
       
       - name: dvc_action_run
@@ -24,7 +17,6 @@ jobs:
           baseline: 'HEAD~1'
           repro_targets: eval.dvc
           metrics_format: '0[.][000]'
-          NVIDIA_VISIBLE_DEVICES: '0'
 
         run: |
           pip --version 
