@@ -17,11 +17,13 @@ jobs:
           baseline: 'HEAD~1'
           repro_targets: eval.dvc
           metrics_format: '0[.][000]'
+          NVIDIA_VISIBLE_DEVICES: '0'
 
         run: |
           pip --version 
           python --version
           nvidia-smi
+          pip install tensorflow wget
           dvc_action_run
 
 
