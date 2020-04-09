@@ -2,9 +2,15 @@ name: default
 
 on: [push, pull_request]
 
+env:
+  NVIDIA_VISIBLE_DEVICES: '0'
+
 jobs:
   dvc:
-    runs-on: [dvc-cml]
+    runs-on: [lucky]
+    container:
+      image: docker://dvcorg/dvc-cml-gpu:latest
+      options: --runtime "nvidia" 
 
     steps:
       - uses: actions/checkout@v2
@@ -17,11 +23,8 @@ jobs:
           baseline: 'HEAD~1'
           repro_targets: eval.dvc
           metrics_format: '0[.][000]'
-          NVIDIA_VISIBLE_DEVICES: '0'
 
         run: |
-          pip --version 
-          python --version
           nvidia-smi
           pip install tensorflow wget
           dvc_action_run
