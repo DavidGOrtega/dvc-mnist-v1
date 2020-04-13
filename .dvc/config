@@ -1,4 +1,4 @@
 [core]
     remote = myremote
 ['remote "myremote"']
-    url = gs://dgodvctest1/mnist_test_v1
+    url = s3://daviddvctest/dvc-mnist-new
