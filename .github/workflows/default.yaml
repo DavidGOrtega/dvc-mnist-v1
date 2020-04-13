@@ -10,7 +10,8 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: dvc_action_run
-        image: docker://dvcorg/dvc-cml-gpu:latest
+        container:
+          image: docker://dvcorg/dvc-cml-gpu:latest
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
