@@ -4,9 +4,10 @@ on: [push, pull_request]
 
 jobs:
   dvc:
-    runs-on: [ubuntu-latest]
-    container:
-      image: docker://davidgortega/dvc-cml-gpu:latest
+    runs-on: [dvc-cml]
+    #runs-on: [ubuntu-latest]
+    # container:
+      #image: docker://davidgortega/dvc-cml-gpu:latest
 
     steps:
       - uses: actions/checkout@v2
