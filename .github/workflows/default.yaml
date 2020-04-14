@@ -24,7 +24,7 @@ jobs:
           metrics_format: '0[.][000]'
 
         run: |
-          #!/bin/bash
+          echo #!/bin/bash
           apt-get update && apt-get install -y python3 python3-pip && pip3 install --upgrade pip
           pip3 install tensorflow wget
           shopt -s expand_aliases
