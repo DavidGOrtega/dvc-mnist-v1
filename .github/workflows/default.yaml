@@ -28,6 +28,7 @@ jobs:
           metrics_format: '0[.][000]'
 
         run: |
+          python --version
           pip3 install tensorflow wget
           dvc_action_run
 
