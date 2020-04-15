@@ -4,14 +4,14 @@ on: [push, pull_request]
 
 jobs:
   dvc:
-    runs-on: [self-hosted]
-    # runs-on: [ubuntu-latest]
-    # container:
-    #   image: docker://dvcorg/dvc-cml:latest
+    # runs-on: [self-hosted]
+    runs-on: [ubuntu-latest]
+    container:
+      image: docker://davidgortega/dvc-cml-gpu:4
 
     steps:
       - uses: actions/checkout@v2
-      
+
       - name: dvc_action_run
         shell: bash
         env:
@@ -27,6 +27,7 @@ jobs:
           pip3 install tensorflow wget
           shopt -s expand_aliases
           alias python=python3
+          python --version
           dvc_action_run
 
   # default:
