@@ -27,6 +27,8 @@ jobs:
           pip install tensorflow wget
           shopt -s expand_aliases
           python --version
+          dvc pull
+          dvc repro train.dvc
           dvc_action_run
 
   # default:
