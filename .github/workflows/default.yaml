@@ -4,10 +4,10 @@ on: [push, pull_request]
 
 jobs:
   dvc:
-    #runs-on: [dvc-cml]
-    runs-on: [ubuntu-latest]
-    container:
-      image: docker://dvcorg/dvc-cml:latest
+    runs-on: [self-hosted]
+    # runs-on: [ubuntu-latest]
+    # container:
+    #   image: docker://dvcorg/dvc-cml:latest
 
     steps:
       - uses: actions/checkout@v2
