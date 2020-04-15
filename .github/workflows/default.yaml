@@ -26,7 +26,6 @@ jobs:
           apt-get update && apt-get install -y python-pip && pip2 install --upgrade pip
           pip install tensorflow wget
           shopt -s expand_aliases
-          alias python=python3
           python --version
           dvc_action_run
 
