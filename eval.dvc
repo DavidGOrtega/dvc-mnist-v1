@@ -5,11 +5,11 @@ deps:
 - path: data/mnist_test.csv
   md5: c807df8d6d804ab2647fc15c3d40f543
 - path: models
-  md5: fd916204580f9c29ff6e0e7a5bf52081.dir
+  md5: f0c253454d943565885ce21322bc566e.dir
 outs:
 - path: metrics/eval.json
   cache: false
   metric: true
   persist: false
-  md5: ac1f818ff3ba529a8e22b971365ffc1f
-md5: c0d70073d30449b15efe08ce63c4a14b
+  md5: 4cf55ae6f338f9ab15933a699f26c065
+md5: e4f6f2d0388eda1db410cd278792c09f
