@@ -1,9 +1,9 @@
-name: dvc
+name: cml
 
 on: [push, pull_request]
 
 jobs:
-  default:
+  dvc:
     # runs-on: [self-hosted]
     runs-on: [ubuntu-latest]
     container:
