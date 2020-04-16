@@ -23,7 +23,7 @@ jobs:
           repro_targets: eval.dvc
           metrics_format: '0[.][000]'
         run: |
-          
+          printenv
           dvc_action_run
 
   # default:
