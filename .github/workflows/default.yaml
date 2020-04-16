@@ -1,4 +1,4 @@
-name: default
+name: CML
 
 on: [push, pull_request]
 
