@@ -3,7 +3,7 @@ name: default
 on: [push, pull_request]
 
 jobs:
-  dvc:
+  default:
     # runs-on: [self-hosted]
     runs-on: [ubuntu-latest]
     container:
