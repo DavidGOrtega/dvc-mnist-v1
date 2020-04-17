@@ -22,7 +22,7 @@ jobs:
           baseline: 'HEAD~1'
           repro_targets: eval.dvc
           metrics_format: '0[.][000]'
-          dvc_pull: '-'
+          dvc_pull: 'models,data'
 
         run: |
           printenv
