@@ -7,7 +7,7 @@ jobs:
     # runs-on: [self-hosted]
     runs-on: [ubuntu-latest]
     container:
-      image: docker://davidgortega/dvc-cml-gpu:4
+      image: docker://dvcorg/dvc-cml:latest
 
     steps:
       - uses: actions/checkout@v2
@@ -22,6 +22,8 @@ jobs:
           baseline: 'HEAD~1'
           repro_targets: eval.dvc
           metrics_format: '0[.][000]'
+          dvc_pull: '-'
+
         run: |
           printenv
           dvc_action_run
