@@ -20,12 +20,13 @@ jobs:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           baseline: 'HEAD~1'
-          repro_targets: '-'
+          #repro_targets: '-'
           metrics_format: '0[.][000]'
-          dvc_pull: 'models,data'
+          #dvc_pull: 'models,data'
 
         run: |
-          printenv
+          apt-get update && apt-get install -y python3-pip && pip3 install --upgrade pip
+          pip install tensorflow wget
           dvc_action_run
 
   # default:
