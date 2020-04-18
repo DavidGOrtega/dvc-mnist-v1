@@ -25,7 +25,7 @@ jobs:
           #dvc_pull: 'models,data'
 
         run: |
-          apt-get update && apt-get install -y python3-pip && pip3 install --upgrade pip
+          apt-get update && apt-get install -y python-pip && pip install --upgrade pip
           pip install tensorflow wget
           dvc_action_run
 
