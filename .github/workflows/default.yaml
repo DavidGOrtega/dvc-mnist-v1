@@ -20,7 +20,7 @@ jobs:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           baseline: 'HEAD~1'
-          #repro_targets: '-'
+          repro_targets: 'train.dvc'
           metrics_format: '0[.][000]'
           #dvc_pull: 'models,data'
 
