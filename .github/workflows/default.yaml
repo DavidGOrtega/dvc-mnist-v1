@@ -23,6 +23,7 @@ jobs:
           repro_targets: 'train.dvc'
           metrics_format: '0[.][000]'
           #dvc_pull: 'models,data'
+          skip_push: false
 
         run: |
           apt-get update && apt-get install -y python-pip && pip install --upgrade pip
