@@ -6,8 +6,8 @@ jobs:
   job3:
     # runs-on: [self-hosted]
     runs-on: [ubuntu-latest]
-    container:
-      image: docker://davidgortega/dvc-cml:dev
+    # container:
+      #image: docker://davidgortega/dvc-cml:dev
 
     steps:
       - uses: actions/checkout@v2
