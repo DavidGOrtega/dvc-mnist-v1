@@ -24,6 +24,7 @@ jobs:
           metrics_format: '0[.][000]'
           #dvc_pull: 'models,data'
           skip_push: true
+          push_targets: '-'
 
         run: |
           apt-get update && apt-get install -y python-pip && pip install --upgrade pip
