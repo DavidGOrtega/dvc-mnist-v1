@@ -30,7 +30,18 @@ jobs:
           apt-get update && apt-get install -y python-pip && pip install --upgrade pip
           pip install tensorflow wget
 
-          dvc_action_run
+          dvc pull -f
+          dvc repro train.dvc
+          dvc push
+
+          dvc diff  --show-json origin/master f5da08eba2c6d4cccbb7dc503042e30e7dbdc4ee
+          dvc metrics diff  --show-json origin/master f5da08eba2c6d4cccbb7dc503042e30e7dbdc4ee
+
+          echo "# CML report" >> report.md
+          dvc metrics diff --show-json origin/master f5da08eba2c6d4cccbb7dc503042e30e7dbdc4ee | cml-metrics >> report.md
+          dvc diff --show-json origin/master f5da08eba2c6d4cccbb7dc503042e30e7dbdc4ee | cml-files >> report.md
+          cml-send-report -p report.md 
+
 
   # default:
   #   runs-on: ubuntu-latest
