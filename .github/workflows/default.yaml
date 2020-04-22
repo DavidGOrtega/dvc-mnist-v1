@@ -40,8 +40,8 @@ jobs:
           dvc diff --show-json origin/master HEAD
 
           echo "# CML report" >> report.md
-          dvc metrics diff --show-json origin/master HEAD | cml-metrics >> report.md
-          dvc diff --show-json origin/master HEAD | cml-files >> report.md
+          echo {} | cml-metrics >> report.md
+
           cml-send-report -p report.md 
 
 
