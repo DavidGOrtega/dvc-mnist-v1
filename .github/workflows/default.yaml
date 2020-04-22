@@ -27,6 +27,8 @@ jobs:
           #push_targets: 'models,data'
 
         run: |
+          git fetch --prune --unshallow
+
           apt-get update && apt-get install -y python-pip && pip install --upgrade pip
           pip install tensorflow wget
 
@@ -34,12 +36,9 @@ jobs:
           dvc repro train.dvc
           dvc push
 
-          dvc diff  --show-json f5da08eba2c6d4cccbb7dc503042e30e7dbdc4ee f5da08eba2c6d4cccbb7dc503042e30e7dbdc4ee
-          dvc metrics diff  --show-json origin/master f5da08eba2c6d4cccbb7dc503042e30e7dbdc4ee
-
           echo "# CML report" >> report.md
-          dvc metrics diff --show-json f5da08eba2c6d4cccbb7dc503042e30e7dbdc4ee f5da08eba2c6d4cccbb7dc503042e30e7dbdc4ee | cml-metrics >> report.md
-          dvc diff --show-json origin/master f5da08eba2c6d4cccbb7dc503042e30e7dbdc4ee | cml-files >> report.md
+          dvc metrics diff --show-json origin/master HEAD | cml-metrics >> report.md
+          dvc diff --show-json origin/master HEAD | cml-files >> report.md
           cml-send-report -p report.md 
 
 
