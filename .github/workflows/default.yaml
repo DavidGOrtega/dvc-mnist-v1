@@ -34,12 +34,12 @@ jobs:
           dvc repro train.dvc
           dvc push
 
-          dvc metrics diff --show-json origin/master HEAD
-          dvc diff --show-json origin/master HEAD
+          dvc metrics diff --show-json HEAD~1 HEAD
+          dvc diff --show-json HEAD~1 HEAD
 
           echo "# CML report" >> report.md
-          dvc metrics diff --show-json origin/master HEAD | cml-metrics >> report.md
-          dvc diff --show-json origin/master HEAD | cml-files >> report.md
+          dvc metrics diff --show-json HEAD~1 HEAD | cml-metrics >> report.md
+          dvc diff --show-json HEAD~1 HEAD | cml-files >> report.md
           cml-send-report -p report.md
 
   # default:
