@@ -19,7 +19,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          baseline: 'HEAD~1'
+          baseline: 'origin/master'
           repro_targets: 'train.dvc'
           metrics_format: '0[.][000]'
           #dvc_pull: 'models,data'
@@ -34,13 +34,7 @@ jobs:
           dvc repro train.dvc
           dvc push
 
-          dvc metrics diff --show-json HEAD~1 HEAD
-          dvc diff --show-json HEAD~1 HEAD
-
-          echo "# CML report" >> report.md
-          dvc metrics diff --show-json HEAD~1 HEAD | cml-metrics >> report.md
-          dvc diff --show-json HEAD~1 HEAD | cml-files >> report.md
-          cml-send-report -p report.md
+        
 
   # default:
   #   runs-on: ubuntu-latest
