@@ -3,11 +3,10 @@ name: CML
 on: [push, pull_request]
 
 jobs:
-  job3:
-    # runs-on: [self-hosted]
+  cml:
     runs-on: [ubuntu-latest]
     container:
-      image: docker://davidgortega/dvc-cml:dev
+      image: docker://dvcorg/dvc-cml:micro
 
     steps:
       - uses: actions/checkout@v2
@@ -17,14 +16,7 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          baseline: 'origin/master'
-          repro_targets: 'train.dvc'
-          metrics_format: '0[.][000]'
-          #dvc_pull: 'models,data'
-          #skip_push: true
-          #push_targets: 'models,data'
 
         run: |
           cml-setup
@@ -39,7 +31,7 @@ jobs:
           echo "# CML report" >> report.md
           dvc metrics diff --show-json origin/master HEAD | cml-metrics >> report.md
           dvc diff --show-json origin/master HEAD | cml-files >> report.md
-          
+
           cml-send-report -p report.md 
 
 
