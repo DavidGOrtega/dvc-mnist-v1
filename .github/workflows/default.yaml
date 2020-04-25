@@ -6,7 +6,7 @@ jobs:
   cml:
     runs-on: [ubuntu-latest]
     container:
-      image: docker://dvcorg/dvc-cml:micro
+      image: docker://davidgortega/dvc-cml:dev
 
     steps:
       - uses: actions/checkout@v2
@@ -19,6 +19,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
         run: |
+          printenv 
+
           cml-setup
 
           apt-get update && apt-get install -y python-pip && pip install --upgrade pip
