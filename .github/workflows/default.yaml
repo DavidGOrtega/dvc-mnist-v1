@@ -6,7 +6,7 @@ jobs:
   cml:
     runs-on: [ubuntu-latest]
     container:
-      image: docker://dvcorg/dvc-cml:comment
+      image: docker://dvcorg/dvc-cml:image
 
     steps:
       - uses: actions/checkout@v2
