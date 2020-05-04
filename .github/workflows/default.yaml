@@ -20,8 +20,7 @@ jobs:
 
         run: |
           echo "# CML report 2" >> report.md
-
-          cat assets/logo.png | cml-publish --md 1 >> report.md
+          vg2png vega.json | cml-publish --md 1 >> report.md
           cat report.md
           cml-send-comment report.md 
 
