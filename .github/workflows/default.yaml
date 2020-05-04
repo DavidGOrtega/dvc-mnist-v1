@@ -18,11 +18,9 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-
         run: |
           echo "# CML report" >> report.md
-          vg2png vega.json image.png
-          cml-publish image.png --md 1 >> report.md
+          vg2png vega.json >> cml-publish --md 1 >> report.md
           cat report.md
           cml-send-comment report.md 
 
